@@ -45,7 +45,7 @@ endif()
 
 set(OPTIONS "--enable-pic --disable-doc --enable-debug --enable-runtime-cpudetect --disable-autodetect")
 
-if(VCPKG_TARGET_IS_WINDOWS)
+if(VCPKG_TARGET_IS_WINDOWS OR VCPKG_HOST_IS_WINDOWS AND VCPKG_TARGET_IS_ANDROID)
     vcpkg_acquire_msys(MSYS_ROOT PACKAGES automake1.16)
     set(SHELL "${MSYS_ROOT}/usr/bin/bash.exe")
     vcpkg_add_to_path("${MSYS_ROOT}/usr/share/automake-1.16")
@@ -542,6 +542,10 @@ if(VCPKG_TARGET_IS_UWP)
     string(APPEND OPTIONS " --disable-programs")
     string(APPEND OPTIONS " --extra-cflags=-DWINAPI_FAMILY=WINAPI_FAMILY_APP --extra-cflags=-D_WIN32_WINNT=0x0A00")
     string(APPEND OPTIONS " --extra-ldflags=-APPCONTAINER --extra-ldflags=WindowsApp.lib")
+endif()
+
+if(VCPKG_TARGET_IS_ANDROID)
+    string(APPEND OPTIONS " --ranlib=${VCPKG_DETECTED_CMAKE_RANLIB}")
 endif()
 
 set(OPTIONS_DEBUG "--debug --disable-optimizations")
