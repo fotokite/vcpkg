@@ -546,6 +546,7 @@ endif()
 
 if(VCPKG_TARGET_IS_ANDROID)
     string(APPEND OPTIONS " --ranlib=${VCPKG_DETECTED_CMAKE_RANLIB}")
+    string(APPEND OPTIONS " --strip=${VCPKG_DETECTED_CMAKE_STRIP}")
 endif()
 
 set(OPTIONS_DEBUG "--debug --disable-optimizations")
