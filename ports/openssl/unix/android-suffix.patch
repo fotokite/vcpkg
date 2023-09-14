@@ -1,0 +1,12 @@
+diff --git a/Configurations/99-android-suffix.txt b/Configurations/99-android-suffix.txt
+new file mode 100644
+index 0000000000..2138044038
+--- /dev/null
++++ b/Configurations/99-android-suffix.txt
+@@ -0,0 +1,6 @@
++(
++    'android-suffix' => {
++        inherit_from => '{android}',
++        shlib_variant => '_3',
++    }
++);
