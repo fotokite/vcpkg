@@ -1,12 +1,12 @@
-diff --git a/Configurations/99-android-suffix.txt b/Configurations/99-android-suffix.txt
-new file mode 100644
-index 0000000000..2138044038
---- /dev/null
-+++ b/Configurations/99-android-suffix.txt
-@@ -0,0 +1,6 @@
-+(
-+    'android-suffix' => {
-+        inherit_from => '{android}',
+diff --git a/Configurations/15-android.conf b/Configurations/15-android.conf
+index 41ad9223e0..db555023f6 100644
+--- a/Configurations/15-android.conf
++++ b/Configurations/15-android.conf
+@@ -192,6 +192,7 @@ my %targets = (
+         bin_lflags       => "-pie",
+         enable           => [ ],
+         shared_extension => ".so",
 +        shlib_variant => '_3',
-+    }
-+);
+     },
+     "android-arm" => {
+         ################################################################
