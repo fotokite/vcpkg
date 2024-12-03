@@ -29,6 +29,7 @@ vcpkg_from_github(
         unix/move-openssldir.patch
         unix/no-empty-dirs.patch
         unix/no-static-libs-for-shared.patch
+        unix/android-suffix.patch
         "${PATCH_FIX_BUILD_WITH_OLD_PERL}"
 )
 
