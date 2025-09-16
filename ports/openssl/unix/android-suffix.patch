@@ -1,0 +1,12 @@
+diff --git a/Configurations/15-android.conf b/Configurations/15-android.conf
+index c258c9940..f64b3f819 100644
+--- a/Configurations/15-android.conf
++++ b/Configurations/15-android.conf
+@@ -195,6 +195,7 @@ my %targets = (
+         bin_lflags       => "-pie",
+         enable           => [ ],
+         shared_extension => ".so",
++        shlib_variant => '_3',
+     },
+     "android-arm" => {
+         ################################################################
